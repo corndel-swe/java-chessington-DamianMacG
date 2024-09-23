@@ -2,9 +2,9 @@ package com.corndel.exercises;
 
 public class Counter {
 
-    int count;
+    private int count;
 
-    public Counter() {
+    public Counter(int count) {
         this.count = 0;
     }
 
