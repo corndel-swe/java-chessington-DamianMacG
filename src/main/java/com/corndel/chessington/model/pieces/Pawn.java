@@ -43,9 +43,9 @@ public class Pawn implements Piece {
         if (getColour().equals(PlayerColour.BLACK) && from.getRow() == 1) {
             allowedMoves.add(new Move(from, from.plus(2, 0)));
         }
-        if (getColour().equals(PlayerColour.WHITE)) {
+        if (getColour().equals(PlayerColour.WHITE) && from.getRow() < 6) {
             allowedMoves.add(new Move(from, from.plus(-1, 0)));
-        } else {
+        } else if (getColour().equals(PlayerColour.BLACK) && from.getRow() > 1) {
             allowedMoves.add(new Move(from, from.plus(1, 0)));
         }
 
