@@ -40,33 +40,43 @@ public class Pawn implements Piece {
         boolean white = getColour().equals(PlayerColour.WHITE);
 
         if (white) {
+
+            if (from.getRow() == 0) {
+                return allowedMoves;
+            }
             if (from.getRow() == 6 && board.get(from.plus(-2, 0)) == null) {
                 allowedMoves.add(new Move(from, from.plus(-2, 0)));
             }
             if (from.getRow() > 0 && board.get(from.plus(-1, 0)) == null) {
                 allowedMoves.add(new Move(from, from.plus(-1, 0)));
             }
-            if (from.getCol() < 7 && board.get(from.plus(-1, 1)) != null) {
+            if (from.getCol() < 7 && board.get(from.plus(-1, 1)) != null &&
+                    board.get(from.plus(-1, 1)).getColour() == PlayerColour.BLACK) {
                 allowedMoves.add(new Move(from, from.plus(-1, 1)));
-
-
-            } else if (from.getCol() > 0 && board.get(from.plus(-1, -1)) != null) {
+            }
+            if (from.getCol() > 0 && board.get(from.plus(-1, -1)) != null &&
+                    board.get(from.plus(-1, -1)).getColour() == PlayerColour.BLACK) {
                 allowedMoves.add(new Move(from, from.plus(-1, -1)));
             }
 
         }
 
         if (black) {
+            if (from.getRow() == 7) {
+                return allowedMoves;
+            }
             if (from.getRow() == 1 && board.get(from.plus(2, 0)) == null) {
                 allowedMoves.add(new Move(from, from.plus(2, 0)));
             }
             if (from.getRow() < 7 && board.get(from.plus(1, 0)) == null) {
                 allowedMoves.add(new Move(from, from.plus(1, 0)));
             }
-            if (from.getCol() < 7 && board.get(from.plus(1, 1)) != null && board.get(from.plus(1, 1)).getColour().equals(PlayerColour.WHITE)) {
+            if (from.getCol() < 7 && board.get(from.plus(1, 1)) != null &&
+                    board.get(from.plus(1, 1)).getColour().equals(PlayerColour.WHITE)) {
                 allowedMoves.add(new Move(from, from.plus(1, 1)));
             }
-            if (from.getCol() < 0 && board.get(from.plus(1, -1)) != null && board.get(from.plus(1, -1)).getColour().equals(PlayerColour.WHITE)) {
+            if (from.getCol() < 0 && board.get(from.plus(1, -1)) != null &&
+                    board.get(from.plus(1, -1)).getColour().equals(PlayerColour.WHITE)) {
                 allowedMoves.add(new Move(from, from.plus(1, -1)));
             }
         }
