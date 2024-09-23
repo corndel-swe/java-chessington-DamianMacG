@@ -92,7 +92,7 @@ public class PawnTest {
         assertThat(moves).doesNotContain(new Move(moved, moved.plus(-2, 0)));
     }
 
- 
+
     @Test
     public void blackPawnCannotMoveDownTwoSquaresIfAlreadyMoved() {
         // Arrange
@@ -111,7 +111,7 @@ public class PawnTest {
         assertThat(moves).doesNotContain(new Move(moved, moved.plus(2, 0)));
     }
 
-    @Disabled
+    
     @Test
     public void pawnsCannotMoveIfPieceInFront() {
         // Arrange
