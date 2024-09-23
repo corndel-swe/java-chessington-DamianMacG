@@ -39,50 +39,66 @@ public class Pawn implements Piece {
         boolean black = getColour().equals(PlayerColour.BLACK);
         boolean white = getColour().equals(PlayerColour.WHITE);
 
+        // For white pawns
         if (white) {
-
-            if (from.getRow() == 0) {
-                return allowedMoves;
-            }
             if (from.getRow() == 6 && board.get(from.plus(-2, 0)) == null) {
-                allowedMoves.add(new Move(from, from.plus(-2, 0)));
+                allowedMoves.add(new Move(from, from.plus(-2, 0))); // Double move
             }
             if (from.getRow() > 0 && board.get(from.plus(-1, 0)) == null) {
-                allowedMoves.add(new Move(from, from.plus(-1, 0)));
+                allowedMoves.add(new Move(from, from.plus(-1, 0))); // Single move
             }
+            // Capture diagonally
             if (from.getCol() < 7 && board.get(from.plus(-1, 1)) != null &&
                     board.get(from.plus(-1, 1)).getColour() == PlayerColour.BLACK) {
-                allowedMoves.add(new Move(from, from.plus(-1, 1)));
+                allowedMoves.add(new Move(from, from.plus(-1, 1))); // Capture right
             }
             if (from.getCol() > 0 && board.get(from.plus(-1, -1)) != null &&
                     board.get(from.plus(-1, -1)).getColour() == PlayerColour.BLACK) {
-                allowedMoves.add(new Move(from, from.plus(-1, -1)));
+                allowedMoves.add(new Move(from, from.plus(-1, -1))); // Capture left
             }
-
+            // En passant check
+            if (from.getRow() == 4) {
+                if (board.get(from.plus(1, 0)) != null &&
+                        board.get(from.plus(1, 0)).getColour() == PlayerColour.BLACK) {
+                    allowedMoves.add(new Move(from, from.plus(-1, 1))); // En passant to the right
+                }
+                if (board.get(from.plus(-1, 0)) != null &&
+                        board.get(from.plus(-1, 0)).getColour() == PlayerColour.BLACK) {
+                    allowedMoves.add(new Move(from, from.plus(-1, -1))); // En passant to the left
+                }
+            }
         }
 
+        // For black pawns
         if (black) {
-            if (from.getRow() == 7) {
-                return allowedMoves;
-            }
             if (from.getRow() == 1 && board.get(from.plus(2, 0)) == null) {
-                allowedMoves.add(new Move(from, from.plus(2, 0)));
+                allowedMoves.add(new Move(from, from.plus(2, 0))); // Double move
             }
             if (from.getRow() < 7 && board.get(from.plus(1, 0)) == null) {
-                allowedMoves.add(new Move(from, from.plus(1, 0)));
+                allowedMoves.add(new Move(from, from.plus(1, 0))); // Single move
             }
+            // Capture diagonally
             if (from.getCol() < 7 && board.get(from.plus(1, 1)) != null &&
-                    board.get(from.plus(1, 1)).getColour().equals(PlayerColour.WHITE)) {
-                allowedMoves.add(new Move(from, from.plus(1, 1)));
+                    board.get(from.plus(1, 1)).getColour() == PlayerColour.WHITE) {
+                allowedMoves.add(new Move(from, from.plus(1, 1))); // Capture right
             }
-            if (from.getCol() < 0 && board.get(from.plus(1, -1)) != null &&
-                    board.get(from.plus(1, -1)).getColour().equals(PlayerColour.WHITE)) {
-                allowedMoves.add(new Move(from, from.plus(1, -1)));
+            if (from.getCol() > 0 && board.get(from.plus(1, -1)) != null &&
+                    board.get(from.plus(1, -1)).getColour() == PlayerColour.WHITE) {
+                allowedMoves.add(new Move(from, from.plus(1, -1))); // Capture left
+            }
+            // En passant check
+            if (from.getRow() == 3) {
+                if (board.get(from.plus(-1, 0)) != null &&
+                        board.get(from.plus(-1, 0)).getColour() == PlayerColour.WHITE) {
+                    allowedMoves.add(new Move(from, from.plus(1, -1))); // En passant to the left
+                }
+                if (board.get(from.plus(1, 0)) != null &&
+                        board.get(from.plus(1, 0)).getColour() == PlayerColour.WHITE) {
+                    allowedMoves.add(new Move(from, from.plus(1, 1))); // En passant to the right
+                }
             }
         }
 
-
-        // TODO Implement this!
         return allowedMoves;
     }
 }
