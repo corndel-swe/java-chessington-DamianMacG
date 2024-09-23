@@ -37,17 +37,26 @@ public class Pawn implements Piece {
     public List<Move> getAllowedMoves(Coordinates from, Board board) {
         var allowedMoves = new ArrayList<Move>();
 
-        if (getColour().equals(PlayerColour.WHITE) && from.getRow() == 6) {
-            allowedMoves.add(new Move(from, from.plus(-2, 0)));
-        }
-        if (getColour().equals(PlayerColour.BLACK) && from.getRow() == 1) {
-            allowedMoves.add(new Move(from, from.plus(2, 0)));
-        }
-        if (getColour().equals(PlayerColour.WHITE) && from.getRow() < 6) {
+        if (getColour().equals(PlayerColour.WHITE)) {
+            if (from.getRow() == 6) {
+                allowedMoves.add(new Move(from, from.plus(-2, 0)));
+            }
+
             allowedMoves.add(new Move(from, from.plus(-1, 0)));
-        } else if (getColour().equals(PlayerColour.BLACK) && from.getRow() > 1) {
+        }
+
+        if (getColour().equals(PlayerColour.BLACK)) {
+            if (from.getRow() == 1) {
+                allowedMoves.add(new Move(from, from.plus(2, 0)));
+            }
+            // Allow single move
             allowedMoves.add(new Move(from, from.plus(1, 0)));
         }
+//        if (getColour().equals(PlayerColour.WHITE) && from.getRow() < 6) {
+//            allowedMoves.add(new Move(from, from.plus(-1, 0)));
+//        } else if (getColour().equals(PlayerColour.BLACK) && from.getRow() > 1) {
+//            allowedMoves.add(new Move(from, from.plus(1, 0)));
+//        }
 
         // TODO Implement this!
         return allowedMoves;
