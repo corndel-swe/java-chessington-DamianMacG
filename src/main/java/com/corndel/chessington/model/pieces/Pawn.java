@@ -46,11 +46,11 @@ public class Pawn implements Piece {
             if (from.getRow() > 0 && board.get(from.plus(-1, 0)) == null) {
                 allowedMoves.add(new Move(from, from.plus(-1, 0)));
             }
-            if (board.get(from.plus(-1, 1)) != null) {
+            if (from.getCol() < 7 && board.get(from.plus(-1, 1)) != null) {
                 allowedMoves.add(new Move(from, from.plus(-1, 1)));
 
 
-            } else if (board.get(from.plus(-1, -1)) != null) {
+            } else if (from.getCol() > 0 && board.get(from.plus(-1, -1)) != null) {
                 allowedMoves.add(new Move(from, from.plus(-1, -1)));
             }
 
@@ -63,12 +63,10 @@ public class Pawn implements Piece {
             if (from.getRow() < 7 && board.get(from.plus(1, 0)) == null) {
                 allowedMoves.add(new Move(from, from.plus(1, 0)));
             }
-            if (board.get(from.plus(1, 1)) != null && board.get(from.plus(1, 1)).getColour().equals(PlayerColour.WHITE)) {
+            if (from.getCol() < 7 && board.get(from.plus(1, 1)) != null && board.get(from.plus(1, 1)).getColour().equals(PlayerColour.WHITE)) {
                 allowedMoves.add(new Move(from, from.plus(1, 1)));
             }
-
-            // Diagonal left (capture)
-            if (board.get(from.plus(1, -1)) != null && board.get(from.plus(1, -1)).getColour().equals(PlayerColour.WHITE)) {
+            if (from.getCol() < 0 && board.get(from.plus(1, -1)) != null && board.get(from.plus(1, -1)).getColour().equals(PlayerColour.WHITE)) {
                 allowedMoves.add(new Move(from, from.plus(1, -1)));
             }
         }
