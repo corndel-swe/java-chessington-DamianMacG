@@ -43,7 +43,7 @@ public class Pawn implements Piece {
             if (from.getRow() == 6 && board.get(from.plus(-2, 0)) == null) {
                 allowedMoves.add(new Move(from, from.plus(-2, 0)));
             }
-            if (board.get(from.plus(-1, 0)) == null) {
+            if (from.getRow() > 0 && board.get(from.plus(-1, 0)) == null) {
                 allowedMoves.add(new Move(from, from.plus(-1, 0)));
             }
 
@@ -53,7 +53,7 @@ public class Pawn implements Piece {
             if (from.getRow() == 1 && board.get(from.plus(2, 0)) == null) {
                 allowedMoves.add(new Move(from, from.plus(2, 0)));
             }
-            if (board.get(from.plus(1, 0)) == null) {
+            if (from.getRow() < 7 && board.get(from.plus(1, 0)) == null) {
                 allowedMoves.add(new Move(from, from.plus(1, 0)));
             }
         }
