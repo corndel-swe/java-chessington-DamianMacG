@@ -36,6 +36,13 @@ public class Pawn implements Piece {
     @Override
     public List<Move> getAllowedMoves(Coordinates from, Board board) {
         var allowedMoves = new ArrayList<Move>();
+
+        if (getColour().equals(PlayerColour.WHITE) && from.getRow() == 6) {
+            allowedMoves.add(new Move(from, from.plus(-2, 0)));
+        }
+        if (getColour().equals(PlayerColour.BLACK) && from.getRow() == 1) {
+            allowedMoves.add(new Move(from, from.plus(2, 0)));
+        }
         if (getColour().equals(PlayerColour.WHITE)) {
             allowedMoves.add(new Move(from, from.plus(-1, 0)));
         } else {
