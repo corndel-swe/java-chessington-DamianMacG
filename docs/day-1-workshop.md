@@ -20,7 +20,7 @@ all classes.
 
 ## First steps
 
-- [ ] Run
+- [x] Run
 
       ```bash
       ./mvnw clean test -Dtest=PawnTest
@@ -28,15 +28,15 @@ all classes.
 
       This will run tests for the pawn
 
-- [ ] Take a look at `PawnTest.java` to get a sense of the specification. You
-      will notice that some tests are "skipped". To begin with, we will only
-      focus on the tests which are not skipped.
+- [x] Take a look at `PawnTest.java` to get a sense of the specification. You
+  will notice that some tests are "skipped". To begin with, we will only
+  focus on the tests which are not skipped.
 
-- [ ] Choose a piece, and work on its `getAvailableMoves` method to make its
-      tests pass.
+- [x] Choose a piece, and work on its `getAvailableMoves` method to make its
+  tests pass.
 
 - [ ] Move onto a new piece, and keep going until all non-pending tests are
-      passing.
+  passing.
 
 ## Moving on
 
@@ -45,15 +45,15 @@ If you take a look at the some of the test files under the
 currently being skipped (they have the `@Disabled` annotation).
 
 - [ ] Choose a piece and pick the first `@Disabled` to remove. Un-skip both the
-      white version of the test and the black version of the test.
+  white version of the test and the black version of the test.
 
 - [ ] Run the tests again, you should see a pair of failing tests.
 
 - [ ] Now that you have some failing tests, once again, try to write some code
-      to make them pass.
+  to make them pass.
 
 - [ ] When you make them pass, pick another piece and/or another test to un-skip
-      and repeat the process again.
+  and repeat the process again.
 
 ## Check out your work
 

@@ -15,13 +15,13 @@ your terminal.
 
 Your instructions are to:
 
-- [ ] Open up
-      [Counter.java](../src/main/java/com/corndel/exercises/Counter.java) and
-      create a new class called `Counter`
+- [x] Open up
+  [Counter.java](../src/main/java/com/corndel/exercises/Counter.java) and
+  create a new class called `Counter`
 
-- [ ] Declare an `int` property called `count`
+- [x] Declare an `int` property called `count`
 
-- [ ] Give it a constructor that initialises `count` to `0`
+- [x] Give it a constructor that initialises `count` to `0`
 
 > [!NOTE]
 >
@@ -40,11 +40,11 @@ current count.
 
 Have a go implementing the following public methods:
 
-- [ ] `increment()`, which adds one to `count`
+- [x] `increment()`, which adds one to `count`
 
-- [ ] `reset()`, which sets `count` to `0`
+- [x] `reset()`, which sets `count` to `0`
 
-- [ ] `getCount()`, which returns the current `count`
+- [x] `getCount()`, which returns the current `count`
 
 ## Exercise 3: Private properties
 
@@ -54,8 +54,8 @@ Finally, read about
 You can run the tests for this exercise using
 `./mvnw clean test -Dtest=D1E3Tests`.
 
-- [ ] Refactor the `count` property to be private, so that it's hidden from
-      outside the class.
+- [x] Refactor the `count` property to be private, so that it's hidden from
+  outside the class.
 
 ## Extensions
 
