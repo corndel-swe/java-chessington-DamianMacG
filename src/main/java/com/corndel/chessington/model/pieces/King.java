@@ -62,6 +62,7 @@ public class King implements Piece {
                     allowedMoves.add(new Move(from, new Coordinates(newRow, newCol)));
                 }
             }
+
         }
 
         return allowedMoves;

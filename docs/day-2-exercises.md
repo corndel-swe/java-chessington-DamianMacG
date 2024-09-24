@@ -15,11 +15,11 @@ Read the docs about
 To run the tests for this exercise, run `./mvnw clean test -Dtest=D2E1Tests` in
 your terminal.
 
-- [ ] Add a static property `PI` to `Maths`. The value of `Maths.PI` should be
-      the `double` `3.14`.
+- [x] Add a static property `PI` to `Maths`. The value of `Maths.PI` should be
+  the `double` `3.14`.
 
-- [ ] Add the static method `Maths.max(double a, double b)`, which returns the
-      largest of `a` and `b`.
+- [x] Add the static method `Maths.max(double a, double b)`, which returns the
+  largest of `a` and `b`.
 
 ## Exercise 2: Inheritance
 
@@ -37,13 +37,13 @@ Since a `Square` is a special type of `Rectangle`, let's make `Square` _inherit
 from_ `Rectangle`.
 
 - [ ] Use the `extends` keyword in the class definition to make `Square` a
-      subclass of `Rectangle`
+  subclass of `Rectangle`
 
 - [ ] We also need to call `super` in the constructor of `Square` to call the
-      constructor of `Rectangle` and set the `width` and `height` properties.
+  constructor of `Rectangle` and set the `width` and `height` properties.
 
 - [ ] Are there any functions we can remove from `Square` that are already
-      defined in `Rectangle`?
+  defined in `Rectangle`?
 
 - [ ] Do we need `#side` anymore if we're using `#width` and `#height`?
 
@@ -59,22 +59,22 @@ In this exercise, we will write the `getArea` and `getPerimeter` methods in
 several shape classes to return the correct values for that shape.
 
 - [ ] Read the documentation on
-      [Interfaces](https://tech-docs.corndel.com/java/interfaces.html)
+  [Interfaces](https://tech-docs.corndel.com/java/interfaces.html)
 
 - [ ] Take a look at the
-      [Shape](../src/main/java/com/corndel/exercises/Shape.java) interface
+  [Shape](../src/main/java/com/corndel/exercises/Shape.java) interface
 
 - [ ] Make sure
-      [RightTriangle](../src/main/java/com/corndel/exercises/RightTriangle.java)
-      implements the `Shape` interface
+  [RightTriangle](../src/main/java/com/corndel/exercises/RightTriangle.java)
+  implements the `Shape` interface
 
   > [!NOTE]
   >
   > Make sure to use the `implements` keyword and `@Override` decorator
 
 - [ ] Make [Circle](../src/main/java/com/corndel/exercises/Circle.java)
-      implement `Shape`
+  implement `Shape`
 
 - [ ] And [Rectangle](../src/main/java/com/corndel/exercises/Rectangle.java)
-      (note that, although we have already written `getArea` and `getPerimeter`
-      methods, we should still `implements Shape` for consistency).
+  (note that, although we have already written `getArea` and `getPerimeter`
+  methods, we should still `implements Shape` for consistency).
