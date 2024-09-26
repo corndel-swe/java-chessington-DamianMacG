@@ -8,30 +8,18 @@ import com.corndel.chessington.model.PlayerColour;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rook implements Piece {
+public class Rook extends AbstractPiece {
 
-    private final Piece.PieceType type;
-    protected final PlayerColour colour;
 
     public Rook(PlayerColour colour) {
-        this.type = PieceType.ROOK;
-        this.colour = colour;
-    }
-
-    @Override
-    public Piece.PieceType getType() {
-        return type;
-    }
-
-    @Override
-    public PlayerColour getColour() {
-        return colour;
+        super(PieceType.ROOK, colour);
     }
 
     @Override
     public String toString() {
-        return colour.toString() + " " + type.toString();
+        return getColour() + " " + getType();
     }
+
 
     @Override
     public List<Move> getAllowedMoves(Coordinates from, Board board) {
@@ -41,7 +29,7 @@ public class Rook implements Piece {
                 {1, 0},
                 {0, -1},
                 {-1, 0},
-                {0, -1}
+                {0, 1}
         };
 
         // Loop through each direction
