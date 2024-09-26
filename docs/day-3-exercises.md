@@ -57,7 +57,7 @@ way to make sure that our code works as expected.
 Another approach is to write the tests _before_ we write the code. This is
 called Test Driven Development (TDD).
 
-- [ ] Read the
+- [x] Read the
   [Test Driven Development](https://tech-docs.corndel.com/java/test-driven-development.html)
   documentation to get an idea of how to use TDD.
 
@@ -72,30 +72,30 @@ method `Maths.round()`.
 
 **Round 1**:
 
-- [ ] Write a test that checks that `Maths.round` returns the same number when
+- [x] Write a test that checks that `Maths.round` returns the same number when
   given a whole number.
 
-- [ ] Run your test with `./mvnw clean test -Dtest=MathsTests` in your terminal
+- [x] Run your test with `./mvnw clean test -Dtest=MathsTests` in your terminal
   to make sure it fails.
 
-- [ ] Write the minimal sensible code to make the test pass.
+- [x] Write the minimal sensible code to make the test pass.
 
-- [ ] Run your test again to make sure it passes.
+- [x] Run your test again to make sure it passes.
 
 **Round 2**:
 
-- [ ] Write a test that checks that `Maths.round` rounds _down_ when given a
+- [x] Write a test that checks that `Maths.round` rounds _down_ when given a
   number with a decimal part less than 0.5.
 
-- [ ] Run your test.
+- [x] Run your test.
 
-- [ ] Write code to make your test pass.
+- [x] Write code to make your test pass.
 
-- [ ] Run your test again to make sure it passes.
+- [x] Run your test again to make sure it passes.
 
 **Round 3**:
 
-- [ ] Write the test that `Maths.round` rounds _up_ when given a number with a
+- [x] Write the test that `Maths.round` rounds _up_ when given a number with a
   decimal part greater than or equal to 0.5. Change the code so that it
   passes the test if it doesn't already pass.
 

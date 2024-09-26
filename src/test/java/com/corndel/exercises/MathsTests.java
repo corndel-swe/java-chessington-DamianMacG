@@ -19,4 +19,11 @@ public class MathsTests {
         assertEquals(500, Math.max(20, 500));
 
     }
+
+    @Test
+    public void MathsRoundTest() {
+        assertEquals(7, Maths.round(7), "The answers should match");
+        assertEquals(7.0, Maths.round(7.4), "The answers should match");
+        assertEquals(8.0, Maths.round(7.5), "The answers should match");
+    }
 }

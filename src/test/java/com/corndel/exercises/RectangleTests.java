@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RectangleTests {
 
     @Test
-    public void checkRectangleArea() {
+    public void RectangleAreaTest() {
         // Arrange
         Rectangle rectangle = new Rectangle(20, 10);
 
@@ -19,7 +19,7 @@ public class RectangleTests {
     }
 
     @Test
-    public void checkRectanglePerimeter() {
+    public void RectanglePerimeterTest() {
         // Arrange
         Rectangle rectangle = new Rectangle(20, 10);
 
@@ -29,4 +29,5 @@ public class RectangleTests {
         // Assert
         assertEquals(60, result, "Perimeter should be 60");
     }
+
 }
