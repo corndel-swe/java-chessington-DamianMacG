@@ -97,4 +97,22 @@ public class KnightTest {
         // Assert
         assertThat(allowedMoves).doesNotContain(new Move(coords, friendlyCoords));
     }
+
+    @Test
+    public void knightCannotMoveOffBoard() {
+        // Arrange
+        Piece knight = new Knight(PlayerColour.WHITE);
+        Coordinates knightCoords = new Coordinates(0, 0);
+        board.placePiece(knightCoords, knight);
+
+        // Act
+        List<Move> allowedMoves = knight.getAllowedMoves(knightCoords, board);
+
+        // Assert
+        // The knight at (0,0) can only move to (1,2) and (2,1)
+        assertThat(allowedMoves).containsExactlyInAnyOrder(
+                new Move(knightCoords, new Coordinates(1, 2)),
+                new Move(knightCoords, new Coordinates(2, 1))
+        );
+    }
 }
