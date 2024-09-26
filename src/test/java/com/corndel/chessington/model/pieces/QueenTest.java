@@ -201,4 +201,66 @@ public class QueenTest {
         assertThat(allowedMoves).doesNotContain(new Move(coords, opponentCoords2));
     }
 
+    @Test
+    public void queenSurroundedBySameColourPieces() {
+        // Arrange
+        Coordinates coords = new Coordinates(3, 3);
+        board.placePiece(coords, queen);
+
+        Piece friendlyPiece1 = new Rook(PlayerColour.WHITE);
+        board.placePiece(new Coordinates(2, 3), friendlyPiece1);
+        board.placePiece(new Coordinates(4, 3), friendlyPiece1);
+        board.placePiece(new Coordinates(3, 2), friendlyPiece1);
+        board.placePiece(new Coordinates(3, 4), friendlyPiece1);
+        board.placePiece(new Coordinates(2, 2), friendlyPiece1);
+        board.placePiece(new Coordinates(4, 4), friendlyPiece1);
+        board.placePiece(new Coordinates(2, 4), friendlyPiece1);
+        board.placePiece(new Coordinates(4, 2), friendlyPiece1);
+
+        // Act
+        List<Move> allowedMoves = queen.getAllowedMoves(coords, board);
+
+        // Assert
+        // List should be empty
+        assertThat(allowedMoves).isEmpty();
+    }
+
+    @Test
+    public void queenCannotCaptureSameColourPieces() {
+        // Arrange
+        Coordinates coords = new Coordinates(3, 3);
+        board.placePiece(coords, queen);
+
+        // Setting up same colour piece with coordinates on the board
+        Piece friendlyPiece = new Rook(PlayerColour.WHITE);
+        Coordinates friendlyCoords = new Coordinates(3, 5);
+        board.placePiece(friendlyCoords, friendlyPiece);
+
+        // Act
+        List<Move> allowedMoves = queen.getAllowedMoves(coords, board);
+
+        // Assert
+        assertThat(allowedMoves).doesNotContain(new Move(coords, friendlyCoords));
+    }
+
+    @Test
+    public void queenBlockedBySameColourPieceOnPath() {
+        // Arrange
+        Coordinates coords = new Coordinates(3, 3);
+        board.placePiece(coords, queen);
+
+        // Setting up same colour piece on board
+        Piece friendlyPiece = new Rook(PlayerColour.WHITE);
+        board.placePiece(new Coordinates(3, 5), friendlyPiece);
+
+        // Act
+        List<Move> allowedMoves = queen.getAllowedMoves(coords, board);
+
+        // Assert
+        // New coordinates is one square past same colour rook
+        assertThat(allowedMoves)
+                .doesNotContain(new Move(coords, new Coordinates(3, 6)), new Move(coords, new Coordinates(3, 7)));
+    }
+
+
 }
