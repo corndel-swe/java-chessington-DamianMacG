@@ -6,21 +6,21 @@ in the module work as expected.
 
 We'll use junit and assertj to write our unit tests.
 
-- [ ] Have a read of the
-      [Unit Testing](https://tech-docs.corndel.com/java/unit-testing.html)
-      documentation to get an idea of how to use `junit` and `assertj`.
+- [x] Have a read of the
+  [Unit Testing](https://tech-docs.corndel.com/java/unit-testing.html)
+  documentation to get an idea of how to use `junit` and `assertj`.
 
 Create an empty file called `MathsTests.java` in the
 `src/test/com/corndel/exercises/` directory. We'll write our tests here.
 
-- [ ] Write a test that ensures `Maths.PI` is equal to `3.14`.
+- [x] Write a test that ensures `Maths.PI` is equal to `3.14`.
 
-- [ ] Write a test that checks that `Maths.max` returns the largest of two
-      numbers. - No need to be too fancy with this test. Just put two numbers
-      into `Maths.max` and check that the result is the larger of the two
-      numbers.
+- [x] Write a test that checks that `Maths.max` returns the largest of two
+  numbers. - No need to be too fancy with this test. Just put two numbers
+  into `Maths.max` and check that the result is the larger of the two
+  numbers.
 
-- [ ] Run your test with `./mvnw clean test -Dtest=MathsTests` in your terminal.
+- [x] Run your test with `./mvnw clean test -Dtest=MathsTests` in your terminal.
 
 ## Exercise 2: Arrange, Act, Assert
 
@@ -30,24 +30,24 @@ Now, let's write some tests for our `Rectangle` class in
 We want to test that the `area` and `perimeter` methods work as expected.
 
 - [ ] Read the
-      [Arrange, Act, Assert](https://tech-docs.corndel.com/java/arrange-act-assert.html)
-      documentation to get an idea of how to structure your tests.
+  [Arrange, Act, Assert](https://tech-docs.corndel.com/java/arrange-act-assert.html)
+  documentation to get an idea of how to structure your tests.
 
 Write a test that checks that the `area` method of `Rectangle` returns the
 correct value:
 
 - [ ] **Arrange**: You should create a new `Rectangle` with a known width and
-      height.
+  height.
 
 - [ ] **Act**: Call the `area` method on the `Rectangle`.
 
 - [ ] **Assert**: Check that the result is the expected area.
 
 - [ ] Similarly, write a test that checks that the `perimeter` method of
-      `Rectangle` returns the correct value.
+  `Rectangle` returns the correct value.
 
 - [ ] Run your test with `./mvnw clean test -Dtest=RectangleTests.java` in your
-      terminal.
+  terminal.
 
 ## Exercise 3: Test Driven Development
 
@@ -58,8 +58,8 @@ Another approach is to write the tests _before_ we write the code. This is
 called Test Driven Development (TDD).
 
 - [ ] Read the
-      [Test Driven Development](https://tech-docs.corndel.com/java/test-driven-development.html)
-      documentation to get an idea of how to use TDD.
+  [Test Driven Development](https://tech-docs.corndel.com/java/test-driven-development.html)
+  documentation to get an idea of how to use TDD.
 
 Let's write a test for a new static method on our `Maths` class. We'll call this
 method `Maths.round()`.
@@ -73,10 +73,10 @@ method `Maths.round()`.
 **Round 1**:
 
 - [ ] Write a test that checks that `Maths.round` returns the same number when
-      given a whole number.
+  given a whole number.
 
 - [ ] Run your test with `./mvnw clean test -Dtest=MathsTests` in your terminal
-      to make sure it fails.
+  to make sure it fails.
 
 - [ ] Write the minimal sensible code to make the test pass.
 
@@ -85,7 +85,7 @@ method `Maths.round()`.
 **Round 2**:
 
 - [ ] Write a test that checks that `Maths.round` rounds _down_ when given a
-      number with a decimal part less than 0.5.
+  number with a decimal part less than 0.5.
 
 - [ ] Run your test.
 
@@ -96,8 +96,8 @@ method `Maths.round()`.
 **Round 3**:
 
 - [ ] Write the test that `Maths.round` rounds _up_ when given a number with a
-      decimal part greater than or equal to 0.5. Change the code so that it
-      passes the test if it doesn't already pass.
+  decimal part greater than or equal to 0.5. Change the code so that it
+  passes the test if it doesn't already pass.
 
 ## Extensions
 

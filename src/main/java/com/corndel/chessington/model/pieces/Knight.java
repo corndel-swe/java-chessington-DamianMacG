@@ -55,7 +55,7 @@ public class Knight implements Piece {
             if (newRow >= 0 && newRow < Board.BOARD_SIZE && newCol >= 0 && newCol < Board.BOARD_SIZE) {
                 Coordinates newCoordinates = new Coordinates(newRow, newCol);
                 Piece targetPiece = board.get(newCoordinates);
-                
+
                 if (targetPiece == null || targetPiece.getColour() != this.colour) {
                     allowedMoves.add(new Move(from, newCoordinates));
                 }
