@@ -29,24 +29,24 @@ Now, let's write some tests for our `Rectangle` class in
 
 We want to test that the `area` and `perimeter` methods work as expected.
 
-- [ ] Read the
+- [x] Read the
   [Arrange, Act, Assert](https://tech-docs.corndel.com/java/arrange-act-assert.html)
   documentation to get an idea of how to structure your tests.
 
 Write a test that checks that the `area` method of `Rectangle` returns the
 correct value:
 
-- [ ] **Arrange**: You should create a new `Rectangle` with a known width and
+- [x] **Arrange**: You should create a new `Rectangle` with a known width and
   height.
 
-- [ ] **Act**: Call the `area` method on the `Rectangle`.
+- [x] **Act**: Call the `area` method on the `Rectangle`.
 
-- [ ] **Assert**: Check that the result is the expected area.
+- [x] **Assert**: Check that the result is the expected area.
 
-- [ ] Similarly, write a test that checks that the `perimeter` method of
+- [x] Similarly, write a test that checks that the `perimeter` method of
   `Rectangle` returns the correct value.
 
-- [ ] Run your test with `./mvnw clean test -Dtest=RectangleTests.java` in your
+- [x] Run your test with `./mvnw clean test -Dtest=RectangleTests.java` in your
   terminal.
 
 ## Exercise 3: Test Driven Development
