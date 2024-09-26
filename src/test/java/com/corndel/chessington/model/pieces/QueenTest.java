@@ -175,4 +175,30 @@ public class QueenTest {
                         new Move(coords, new Coordinates(8, -1)),
                         new Move(coords, new Coordinates(-1, 8)));
     }
+
+    @Test
+    public void queenCannotMoveBeyondCapturingOpposingPiece() {
+        // Arrange
+        Coordinates coords = new Coordinates(3, 4);
+        board.placePiece(coords, queen);
+
+        Piece opponent1 = new Pawn(PlayerColour.BLACK);
+        Coordinates opponentCoords1 = new Coordinates(3, 5);
+        board.placePiece(opponentCoords1, opponent1);
+
+        Piece opponent2 = new Pawn(PlayerColour.BLACK);
+        Coordinates opponentCoords2 = new Coordinates(3, 6);
+        board.placePiece(opponentCoords2, opponent2);
+
+        // Act
+        List<Move> allowedMoves = queen.getAllowedMoves(coords, board);
+
+        // Assert
+        // Can capture first opponent piece
+        assertThat(allowedMoves).contains(new Move(coords, opponentCoords1));
+
+        // Cannot move beyond that square
+        assertThat(allowedMoves).doesNotContain(new Move(coords, opponentCoords2));
+    }
+
 }
