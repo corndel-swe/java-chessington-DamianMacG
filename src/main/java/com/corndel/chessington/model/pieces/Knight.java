@@ -4,36 +4,51 @@ import com.corndel.chessington.model.Board;
 import com.corndel.chessington.model.Coordinates;
 import com.corndel.chessington.model.Move;
 import com.corndel.chessington.model.PlayerColour;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class Knight implements Piece {
+public class Knight extends AbstractPiece {
 
-  private final Piece.PieceType type;
-  protected final PlayerColour colour;
+    public Knight(PlayerColour colour) {
+        super(PieceType.KNIGHT, colour);
+    }
 
-  public Knight(PlayerColour colour) {
-    this.type = PieceType.KNIGHT;
-    this.colour = colour;
-  }
+    @Override
+    public String toString() {
+        return getColour() + " " + getType();
+    }
 
-  @Override
-  public Piece.PieceType getType() {
-    return type;
-  }
+    @Override
+    public List<Move> getAllowedMoves(Coordinates from, Board board) {
+        List<Move> allowedMoves = new ArrayList<>();
 
-  @Override
-  public PlayerColour getColour() {
-    return colour;
-  }
+        int[][] directions = {
+                {2, 1},
+                {2, -1},
+                {-2, 1},
+                {-2, -1},
+                {1, 2},
+                {1, -2},
+                {-1, 2},
+                {-1, -2}
+        };
 
-  @Override
-  public String toString() {
-    return colour.toString() + " " + type.toString();
-  }
+        for (int[] direction : directions) {
+            int newRow = from.getRow() + direction[0];
+            int newCol = from.getCol() + direction[1];
 
-  @Override
-  public List<Move> getAllowedMoves(Coordinates from, Board board) {
-    // TODO Implement this!
-    return List.of();
-  }
+            if (newRow >= 0 && newRow < Board.BOARD_SIZE && newCol >= 0 && newCol < Board.BOARD_SIZE) {
+                Coordinates newCoordinates = new Coordinates(newRow, newCol);
+                Piece targetPiece = board.get(newCoordinates);
+
+                if (targetPiece == null || targetPiece.getColour() != this.colour) {
+                    allowedMoves.add(new Move(from, newCoordinates));
+                }
+            }
+        }
+
+        return allowedMoves;
+    }
 }
+

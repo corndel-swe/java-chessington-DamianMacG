@@ -9,12 +9,12 @@ The pieces in the folder should all _inherit_ from the `AbstractPiece` class.
 
 Your task is to do the following:
 
-- [ ] Make all pieces inherit from the `AbstractPiece` class
+- [x] Make all pieces inherit from the `AbstractPiece` class
 
-- [ ] Move any _duplicated_ code from the child classes into the `AbstractPiece`
-      class
+- [x] Move any _duplicated_ code from the child classes into the `AbstractPiece`
+  class
 
-- [ ] Make sure the tests that _were_ passing before your refactor still pass
+- [x] Make sure the tests that _were_ passing before your refactor still pass
 
 > [!TIP]
 >
