@@ -153,4 +153,26 @@ public class QueenTest {
                         new Move(coords, new Coordinates(3, 6)),
                         new Move(coords, new Coordinates(3, 7)));
     }
+
+    @Test
+    public void queenCannotMoveOffBoard() {
+        // Arrange
+        Coordinates coords = new Coordinates(7, 7);
+        board.placePiece(coords, queen);
+
+        // Act
+        List<Move> allowedMoves = queen.getAllowedMoves(coords, board);
+
+        // Assert
+        assertThat(allowedMoves)
+                .doesNotContain(
+                        new Move(coords, new Coordinates(8, 7)),
+                        new Move(coords, new Coordinates(7, 8)),
+                        new Move(coords, new Coordinates(8, 8)),
+                        new Move(coords, new Coordinates(-1, 7)),
+                        new Move(coords, new Coordinates(7, -1)),
+                        new Move(coords, new Coordinates(-1, -1)),
+                        new Move(coords, new Coordinates(8, -1)),
+                        new Move(coords, new Coordinates(-1, 8)));
+    }
 }
